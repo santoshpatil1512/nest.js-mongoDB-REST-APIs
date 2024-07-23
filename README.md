@@ -25,8 +25,8 @@ A simple and scalable backend API built with NestJS, using MongoDB, JWT for auth
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/nestjs-crud-api.git
-    cd nestjs-crud-api
+    git clone https://github.com/santoshpatil1512/nest.js-mongoDB-REST-APIs.git
+    cd nest.js-mongoDB-REST-APIs
     ```
 
 2. **Install dependencies**:
@@ -38,7 +38,8 @@ A simple and scalable backend API built with NestJS, using MongoDB, JWT for auth
     Create a `.env` file in the root directory and add the following variables:
     ```
     MONGO_URI=mongodb://localhost/nestjs-crud
-    JWT_SECRET=your_jwt_secret
+    JWT_SECRETS=your_jwt_secret
+    JWT_EXPIRES =  3d
     ```
 
 ## Running the Application
@@ -64,17 +65,18 @@ A simple and scalable backend API built with NestJS, using MongoDB, JWT for auth
     - **Body**:
       ```json
       {
-        "username": "example",
+        "name": "example",
+        "email": "example@gmail.com",
         "password": "password"
       }
       ```
 - **Login**: 
     - **URL**: `/auth/login`
-    - **Method**: `POST`
+    - **Method**: `GET`
     - **Body**:
       ```json
       {
-        "username": "example",
+        "email": "example@gmail.com",
         "password": "password"
       }
       ```
@@ -87,9 +89,11 @@ A simple and scalable backend API built with NestJS, using MongoDB, JWT for auth
     - **Body**:
       ```json
       {
-        "title": "NestJS in Action",
-        "author": "John Doe",
-        "published": "2024-01-01"
+        "title": "title",
+        "description": "description",
+        "author": "author",
+        "price": 000,
+        "category": "category"
       }
       ```
 - **Get All Books**: 
@@ -106,9 +110,11 @@ A simple and scalable backend API built with NestJS, using MongoDB, JWT for auth
     - **Body**:
       ```json
       {
-        "title": "Updated Title",
-        "author": "Jane Doe",
-        "published": "2024-06-01"
+        "title": "title",
+        "description": "description",
+        "author": "author",
+        "price": 000,
+        "category": "category"
       }
       ```
 
